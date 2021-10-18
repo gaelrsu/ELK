@@ -1,0 +1,11 @@
+filebeat.yml :  
+  output.elasticsearch
+      ...
+      #output.elasticsearch:
+        # Array of hosts to connect to.
+        #hosts: ["localhost:9200"]
+      ...
+   outputlogstash
+      output.logstash:
+        # The Logstash hosts
+        hosts: ["localhost:5044"]
