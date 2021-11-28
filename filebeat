@@ -9,3 +9,21 @@ filebeat.yml :
       output.logstash:
         # The Logstash hosts
         hosts: ["localhost:5044"]
+        
+        
+       
+       
+ ============filebeat unputs =============
+ filebeat.inputs
+ 
+ - type: log
+    - /var/log/nginx/*.log
+    
+ exclude_lines: ["^127.0.0.1]             //retirer 
+ exclude_files: [".gz$"]
+ ignore_older: 24h
+ tags: ["back", "system"]
+ fields:
+     env: prod
+     part: back
+ 
