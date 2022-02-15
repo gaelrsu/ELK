@@ -1,3 +1,12 @@
 sudo ufw allow 5601/tcp
 
 
+-Versions that are not compatible; Elasticsearch, Kibana, Logstash and Filebeat must be in the same version.
+-Conflict between different web services:
+Nginx think to stop apache2 sudo service apache2 stop and create the sitesvailable folder in Nginx. You can use the command sudo lsof -i:80 to list the processes in progress and the ports used.
+-Bad Gateway error, check the configuration files especially those of kibana, the error usually comes from an invalid ip. 
+-The firewall blocking the entries / exits (ufw inactive) for that here are the commands to make to activate the authorization:
+sudo ufw enable
+sudo ufw default deny
+sudo iptables -L    
+sudo ufw allow 5601/tcp
