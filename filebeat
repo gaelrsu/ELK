@@ -1,3 +1,6 @@
+DECOMMENTER L'OUTPUT VALIDE / METTRE LOCAL HOST OU IP DU SERVEUR ELK
+
+
 filebeat.yml :  
   output.elasticsearch
       ...
