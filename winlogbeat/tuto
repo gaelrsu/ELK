@@ -20,7 +20,7 @@ POWERSHELL en admin;
   
 POWERSHELL
   cd ..\Sysmon
-  .\Sysmon.exe -acepteula -i .\sysmonconfig-export.yml   
+  .\Sysmon.exe -accepteula -i .\sysmonconfig-export.yml   
   
   !!!!!!!!!!!!!fichier sysmon config!!!!!!!!!!
   
