@@ -2,8 +2,8 @@ elasticsearch :
 
 
   elasticsearch.yml :
-  
-    cluster.name: my-application
+```bash
+  cluster.name: my-application
     node.name: node-1
     network.host: localhost
     http.port: 9200
@@ -15,4 +15,6 @@ elasticsearch :
   
     ## -Xms4g                ==> 512m    
     ## -Xmx4g
+```  
+  
 
