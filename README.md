@@ -97,7 +97,7 @@ tail -f /var/log/syslog
 
 Afin d’accéder à l’interface créez un utilisateur administratif, ainsi que son mot de passe qui sera stocké dans htpasswd.users :
 ```bash
-echo "kibanaadmin:`openssl passwd -apr1`" | sudo tee -a /etc/nginx/htpasswd.users
+echo "kibanaadmin:`openssl passwd toor" | sudo tee -a /etc/nginx/htpasswd.users
 ```
 
 ## Logstash
