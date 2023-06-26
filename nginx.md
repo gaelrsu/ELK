@@ -1,4 +1,6 @@
-  nginx/sites-available/your_domain :
+##   nginx/sites-available/your_domain :
+
+```bash
           server {
               listen 80;
 
@@ -16,13 +18,17 @@
                   proxy_cache_bypass $http_upgrade;
               }
           }
+```
+
 
 Create link : 
+```bash
 sudo ln -s /etc/nginx/sites-available/your_domain /etc/nginx/sites-enabled/your_domain
+```
 
-
-
-
- ATTENTION SI ACTIVATION FIREWALL POSSIBLE BLOCAGE ENTRE SERVEUR
+### ATTENTION SI ACTIVATION FIREWALL POSSIBLE BLOCAGE ENTRE SERVEUR
 firewall :
+```bash
 sudo ufw allow 'Nginx Full'
+```
+
