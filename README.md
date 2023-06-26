@@ -5,6 +5,7 @@ Elasticsearch fonctionne donc sous le principe d’une base nosql distribuée su
 Il indexe tous les documents en offrant une qualité de recherche en terms frequency (fréquence des mots) et en Inverse different frequency, c’est-à-dire que moins un mot est connu plus il aura de poids ou de valeur dans la recherche.
 Commencez l’installation d’elasticsearch avec la commande présentée :
 sudo apt install elasticsearch
+
 II/ Configuration
 Utilisez maintenant l’éditeur de texte afin de modifier le ficher de configuration d’elasticsearch :
 (Il faudra porter une attention particulière sur le fichier, celui-ci étant en format YAML, il faudra bien conserver le format d’indentation).
@@ -46,6 +47,7 @@ I/ Installation
 Kibana sert d’interface et d’exploitation des données, il est aussi un assistant d’installation en ce qui concerne les systèmes métriques, logs et SIEM. On peut aussi lui implémenter un jeu de données afin de servir d’exemple.
 Une fois les composants elasticsearch en place, procédez à l’installation de kibana :
 sudo apt install kibana
+
 II/ Configuration
 Une fois installé, modifiez le fichier YAML en décommentant les lignes et en les modifiant comme ci-dessous :
 server.port: 5601 ➔port d’écoute
@@ -70,6 +72,7 @@ Il récupère les données simultanément de sources diverses (applications, ser
 Lancez l’installation à l’aide de cette commande :
 sudo apt install logstash
 7
+
 II/ Configuration
 La configuration se fait et se fera au fur et à mesure du traitement des données dans le dossier /etc/logstash/con.d
 Une fois installé, débutez la configuration de celui-ci.
@@ -139,6 +142,7 @@ La création de nouveaux patterns permettra de distinguer les différents types 
 Dans l’interface kibana :
 Index pattern ➔ create index pattern ➔ cherchez selon le nom de l’index, dans ce cas entrez nginx-* (l’étoile lui permettant de prendre tout ce que commencera par nginx- , cela permettra en cas de liste par des dates de toutes les traiter. Exemple : nginx-10/01/22 nginx-11/01/22 etc...) ➔ choisissez ensuite @timestamp (qui est le format horaire).
 Filebeat
+
 I/ Installation
 Elastic Stack utilise plusieurs expéditeurs de données légères appelés Beats pour collecter des données en provenance de diverses sources pour les envoyer vers Logstash ou Elasticsearch.
 Filebeat : recueille et expédie les fichiers journaux.
@@ -150,6 +154,7 @@ Heartbeat : surveille activement la disponibilité des services.
 Dans ce cas-là nous utiliserons Filebeat, installons-le :
 sudo apt install filebeat
 10
+
 II/ Configuration
 Procédez à la configuration de son fichier YML :
 sudo nano /etc/filebeat/filebeat.yml
