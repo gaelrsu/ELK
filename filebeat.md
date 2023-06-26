@@ -1,8 +1,7 @@
-DECOMMENTER L'OUTPUT VALIDE / METTRE LOCAL HOST OU IP DU SERVEUR ELK
-
-
+ # DECOMMENTER L'OUTPUT VALIDE / METTRE LOCAL HOST OU IP DU SERVEUR ELK
 filebeat.yml :  
-  output.elasticsearch
+```bash
+ output.elasticsearch
       ...
       #output.elasticsearch:
         # Array of hosts to connect to.
@@ -12,13 +11,11 @@ filebeat.yml :
       output.logstash:
         # The Logstash hosts
         hosts: ["localhost:5044"]
-        
-        
-       
+```    
        
  ============filebeat unputs =============
  filebeat.inputs
- 
+ ```bash
  - type: log
     - /var/log/nginx/*.log
     
@@ -29,4 +26,6 @@ filebeat.yml :
  fields:
      env: prod
      part: back
+```
+
  
