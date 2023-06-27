@@ -4,7 +4,13 @@ I/ Installation
 Elasticsearch fonctionne donc sous le principe d’une base nosql distribuée sur un ensemble de machine lui permettant de créer une résilience plus forte selon la taille du cluster.
 Il indexe tous les documents en offrant une qualité de recherche en terms frequency (fréquence des mots) et en Inverse different frequency, c’est-à-dire que moins un mot est connu plus il aura de poids ou de valeur dans la recherche.
 Commencez l’installation d’elasticsearch avec la commande présentée :
+```bash
+curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add –
+
+echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list
+
 sudo apt install elasticsearch
+```
 
 II/ Configuration
 Utilisez maintenant l’éditeur de texte afin de modifier le ficher de configuration d’elasticsearch :
