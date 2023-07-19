@@ -1,6 +1,7 @@
 # ELK
 
 I/ Installation
+
 Elasticsearch fonctionne donc sous le principe d’une base nosql distribuée sur un ensemble de machine lui permettant de créer une résilience plus forte selon la taille du cluster.
 Il indexe tous les documents en offrant une qualité de recherche en terms frequency (fréquence des mots) et en Inverse different frequency, c’est-à-dire que moins un mot est connu plus il aura de poids ou de valeur dans la recherche.
 Commencez l’installation d’elasticsearch avec la commande présentée :
@@ -14,6 +15,7 @@ sudo apt install elasticsearch
 ```
 
 II/ Configuration
+
 Utilisez maintenant l’éditeur de texte afin de modifier le ficher de configuration d’elasticsearch :
 (Il faudra porter une attention particulière sur le fichier, celui-ci étant en format YAML, il faudra bien conserver le format d’indentation).
 
@@ -70,6 +72,7 @@ Il est possible de réduire la consommation d’elasticsearch en modifiant la co
 
 ## KIBANA
 I/ Installation
+
 Kibana sert d’interface et d’exploitation des données, il est aussi un assistant d’installation en ce qui concerne les systèmes métriques, logs et SIEM. On peut aussi lui implémenter un jeu de données afin de servir d’exemple.
 Une fois les composants elasticsearch en place, procédez à l’installation de kibana :
 ```bash
@@ -78,6 +81,7 @@ sudo apt install kibana
 
 
 II/ Configuration
+
 Une fois installé, modifiez le fichier YAML en décommentant les lignes et en les modifiant comme ci-dessous :
 ```bash
 server.port: 5601 ➔port d’écoute
@@ -110,6 +114,7 @@ echo "kibanaadmin:`openssl passwd toor`" | sudo tee -a /etc/nginx/htpasswd.users
 ## Logstash
 
 I/ Installation
+
 Logstash est un outil open source très puissant pour le traitement de données par un pipe.
 Il récupère les données simultanément de sources diverses (applications, serveurs etc.) pour les traiter en 3 étapes : Récupération des données et envoi vers le pipe input ➔ filtrage (les données sont triées, il restera uniquement ce qui nous intéresse, c’est-à-dire que cela nous permettra de faire ressortir du lot la ou les donnée(s) désirée(s) ) ➔ elles ressortent ensuite par le output en direction d’elasticsearch.
 Lancez l’installation à l’aide de cette commande :
@@ -118,6 +123,7 @@ sudo apt install logstash
 ```
 
 II/ Configuration
+
 La configuration se fait et se fera au fur et à mesure du traitement des données dans le dossier /etc/logstash/con.d
 Une fois installé, débutez la configuration de celui-ci.
 Dans un premier temps, créez un fichier d’entrée Filebeat :
@@ -147,6 +153,7 @@ sudo systemctl enable logstash
 
 ## Nginx
 I/ Installation
+
 Nginx est un proxy inverse, c’est-à-dire qu’il va traiter et redistribuer les requêtes des clients à un serveur. En plus de travailler sur l’équilibrage entre les serveurs, le proxy inverse peut gérer les services qui ne font pas nécessairement parti des applications des serveurs (exemple : compression, SSL encryption)
 Pour l’installer :
 ```bash
@@ -189,6 +196,7 @@ Nginx HTTP (v6) ALLOW Anywhere (v6)
 ```
 
 II/ Configuration
+
 A présent, vérifiez que le service est opérationnel :
 ```bash
 systemctl status nginx
@@ -225,6 +233,7 @@ Index pattern ➔ create index pattern ➔ cherchez selon le nom de l’index, d
 ## Filebeat
 
 I/ Installation
+
 Elastic Stack utilise plusieurs expéditeurs de données légères appelés Beats pour collecter des données en provenance de diverses sources pour les envoyer vers Logstash ou Elasticsearch.
 Filebeat : recueille et expédie les fichiers journaux.
 Metricbeat : collecte les métriques de vos systèmes et services.
@@ -238,6 +247,7 @@ sudo apt install filebeat
 ```
 
 II/ Configuration
+
 Procédez à la configuration de son fichier YML :
 ```bash
 sudo nano /etc/filebeat/filebeat.yml
