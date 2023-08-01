@@ -6,6 +6,7 @@ ________________________________________________________________________________
 
   download => extraire => coller dans 'program' 
   Editer .yml => idem que sur debian     output ELK IP / ip Kibana
+Voir le fichier de config proposé par elk : http://192.168.1.1:5601/app/home#/tutorial/windowsEventLogs
   
   ```
   
@@ -16,11 +17,13 @@ POWERSHELL en admin;
   .\install-service-winlogbeat.ps1
   ```
   
-  !!!!!!!!!!!!!si exécution powershell bloqué :  Set-ExecutionPolicy Unrestricted
+  si exécution powershell bloqué :  Set-ExecutionPolicy Unrestricted
   ```
   Start-Service winlogbeat
   ```
- SYSMON
+
+______________________________________________________________________________________
+ ### SYSMON
   télécharger sysmon et coller dans 'program'
   Télécharger sysmon config file (github) et coller dans program/sysmon
   
