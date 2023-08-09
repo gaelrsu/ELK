@@ -146,7 +146,10 @@ Si le résultat suivant s’affiche on peut alors passer à la suite.
 ```bash
 # output
 Config Validation Result: OK. Exiting Logstash
+```
+
 Une fois la vérification faite, activez et lancez le service :
+```bash
 sudo systemctl start logstash
 sudo systemctl enable logstash
 ```
