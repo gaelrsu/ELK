@@ -27,9 +27,9 @@ Le document se présentera sous cette forme :
 ```bash
 cluster.name : my-application    ➔nom du cluster devant être le même pour toute les machines afin de communiquer
 node.name : node-1               ➔nom du noeuds
-network.host : localhost         ➔ip d’écoute
+network.host : 0.0.0.0           ➔ip d’écoute
 http.port : 9200                 ➔port d’écoute
-discovery.seed_hosts : []        ➔permet de découvrir tous les hôtes
+discovery.seed_hosts : [ ]       ➔permet de découvrir tous les hôtes
 ```
 
 Elasticsearch écoute tout le trafic sur le port 9200, il faudra limiter l’accès pour empêcher les personnes extérieures de lire les données ou de modifier le cluster. Il sera donc important de décommenter la ligne network.host et remplacer sa valeur par localhost. localhost permettra d’écouter sur toutes les interfaces et les IP liés. (Possibilité de remplacer le localhost par 0.0.0.0 afin d’écouter toutes les interfaces).
@@ -86,7 +86,7 @@ Une fois installé, modifiez le fichier YAML en décommentant les lignes et en l
 ```bash
 server.port: 5601 ➔port d’écoute
 server.host: 0.0.0.0 ➔ permet de passer en écoute
-elasticsearch.hosts: ["http://127.0.0.1:9200"] ➔recherche d’hôtes
+elasticsearch.hosts: ["http://localhost:9200"] ➔recherche d’hôtes
 ```
 
 Activez ensuite le service et le démarrer :
