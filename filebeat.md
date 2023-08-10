@@ -112,7 +112,7 @@ setup.template.settings:
   # Scheme and port can be left out and will be set to the default (http and 5601)
   # In case you specify and additional path, the scheme is required: http://localhost:5601/path
   # IPv6 addresses should always be defined as: https://[2001:db8::1]:5601
-  #host: "163.111.114.252:5601"
+  #host: "192.168.1.2:5601"
 
   # Kibana Space ID
   # ID of the Kibana Space into which the dashboards should be loaded. By default,
@@ -139,9 +139,9 @@ setup.template.settings:
 # ---------------------------- Elasticsearch Output ----------------------------
 output.elasticsearch:
   # Array of hosts to connect to.
-  hosts: ["163.111.114.252:9200"]
+  hosts: ["192.168.1.2:9200"]
 setup.kibana:
-  host: "163.111.114.252:5601"
+  host: "192.168.1.2:5601"
 
   # Protocol - either `http` (default) or `https`.
   #protocol: "https"
